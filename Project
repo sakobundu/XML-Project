@@ -1,0 +1,112 @@
+<!-- Create an XML document containing the last ten (10) courses you have taken with UMGC or other institutions with the title and the course code.-->	
+
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <cd>
+    <Course>Principles of Web Design and Technology I</Course>
+    <Code>CMST 385</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2021</year>
+  </cd>
+  <cd>
+    <Course>Introduction to Problem Solving and Algorithm Design</Course>
+    <Code>CMIS 102</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2020</year>
+  </cd>
+  <cd>
+    <Course>User Experience (UX) and Interface Design</Course>
+    <Code>CMST 308</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2021</year>
+  </cd>
+  <cd>
+   <Course>Fundamentals of Digital Media</Course>
+    <Code>CMST 295</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2021</year>
+  </cd>
+  <cd>
+   <Course>Introduction to Interactive Design</Course>
+    <Code>CMST 290</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2021</year>
+  </cd>
+  <cd>
+    <Course>Web Development Using XML</Course>
+    <Code>CMST 450</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2022</year>
+  </cd>
+  <cd>
+    <Course>Principles of Web Design and Technology II</Course>
+    <Code>CMST 386</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2021</year>
+  </cd>
+  <cd>
+  <Course>Advance Technical Writing</Course>
+    <Code>WRTG 393</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2022</year>
+  </cd>
+  <cd>
+   <Course>Principles of Multimedia I</Course>
+    <Code>CMST 341</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2022</year>
+  </cd>
+  <cd>
+   <Course>Media and Society</Course>
+    <Code>Comm 202</Code>
+    <country>USA</country>
+    <State>Maryland</State>
+    <School>UMGC</School>
+    <year>2021</year>
+  </cd>
+</catalog>
+
+<!-- XSLT Code.-->	
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<html> 
+<body>
+  <h2>Last ten (10) courses I have taken with UMGC.</h2>
+  <table border="3">
+    <tr bgcolor="#FF5733">
+      <th style="text-align:left">Course</th>
+      <th style="text-align:left">Code</th>
+    </tr>
+    <xsl:for-each select="catalog/cd">
+    <tr>
+      <td><xsl:value-of select="Course"/></td>
+      <td><xsl:value-of select="Code"/></td>
+    </tr>
+    </xsl:for-each>
+  </table>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
+
+
